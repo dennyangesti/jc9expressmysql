@@ -201,6 +201,17 @@ router.patch('/users/profile/:uname', (req, res) => {
     })
 })
 
+// READ ALL USERS
+router.get('/allusers', (req, res) => {
+    const sql = `SELECT * FROM users`
+
+    conn.query(sql, (err, result) => {
+        if (err) return res.send(err)
+
+        res.send(result)
+    })
+})
+
 // VERIFY USER
 router.get('/verify', (req, res) => {
     const sql = `UPDATE users SET verified = true 
