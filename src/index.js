@@ -12,7 +12,7 @@ app.use(userRouter)
 app.use(taskRouter)
 
 app.get('/', (req, res) => {
-    res.send(`<h1>Welcome to Heroku App</h1>`)
+    res.send('<h1>Selamat datang di Heroku API</h1>')
 })
 
 app.listen(port, () => {
